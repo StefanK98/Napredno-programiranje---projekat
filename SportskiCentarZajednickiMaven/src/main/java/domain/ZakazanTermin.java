@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package domain;
 
 import java.io.Serializable;
@@ -13,21 +8,63 @@ import java.util.ArrayList;
 import java.util.Date;
 
 /**
- *
- * @author Kujovic
+ * Klasa koja predstavlja jedan zakazan termin.
+ * 
+ * Zakazan termin ima atribute:
+ * zakazanTerminID tipa Long
+ * datumVreme tipa Date
+ * pomocniTrener tipa PomocniTrener (objekat klase PomocniTrener)
+ * korisnik tipa Korisnik (objekat klase Korisnik)
+ * trening tipa Trening (objekat klase Trening)
+ * vezbeZaTermin tipa ArrayList (čiju listu čine objekti klase VezbaZaTermin)
  */
 public class ZakazanTermin extends AbstractDomainObject implements Serializable{
-    
+    /**
+     * Jedinstvena šifra zakazanog termina, tipa Long.
+     */
     private Long zakazanTerminID;
+    
+    /**
+     * Datum i vreme zakazanog termina, tipa Date.
+     */
     private Date datumVreme;
+    
+    /**
+     * Objekat klase PomocniTrener.
+     */
     private PomocniTrener pomocniTrener;
+    
+    /**
+     * Objekat klase Korisnik.
+     */
     private Korisnik korisnik;
+    
+    /**
+     * Objekat klase Trening.
+     */
     private Trening trening;
+    
+    /**
+     * Lista vežbi za termin, tipa ArrayList.
+     */
     private ArrayList<VezbaZaTermin> vezbeZaTermin;
 
+    /**
+     * Konstruktor koji inicijalizuje objekat klase ZakazanTermin.
+     */
     public ZakazanTermin() {
     }
 
+    /**
+     * Konstruktor koji inicijalizuje objekat i postavlja vrednost svih atributa klase ZakazanTermin.
+     * 
+     * @param zakazanTerminID Jedinstvena šifra zakazanog termina tipa Long.
+     * @param datumVreme Datum i vreme zakazanog termina, tipa Date.
+     * @param pomocniTrener Objekat klase PomocniTrener.
+     * @param korisnik Objekat klase Korisnik.
+     * @param trening Objekat klase Trening.
+     * @param vezbeZaTermin Lista objekata vezba za termin klase VezbaZaTermin.
+     */
     public ZakazanTermin(Long zakazanTerminID, Date datumVreme, PomocniTrener pomocniTrener, Korisnik korisnik, Trening trening, ArrayList<VezbaZaTermin> vezbeZaTermin) {
         this.zakazanTerminID = zakazanTerminID;
         this.datumVreme = datumVreme;
@@ -38,84 +75,108 @@ public class ZakazanTermin extends AbstractDomainObject implements Serializable{
     }
 
     /**
-     * @return the zakazanTerminID
+     * Vraća šifru zakazanog termina.
+     * 
+     * @return Šifra zakazanog termina, tipa Long.
      */
     public Long getZakazanTerminID() {
         return zakazanTerminID;
     }
 
     /**
-     * @param zakazanTerminID the zakazanTerminID to set
+     * Postavlja  šifru zakazanog termina na novu vrednost.
+     * 
+     * @param zakazanTerminID Šifra zakazanog termina, tipa Long.
      */
     public void setZakazanTerminID(Long zakazanTerminID) {
         this.zakazanTerminID = zakazanTerminID;
     }
 
     /**
-     * @return the datumVreme
+     * Vraća datum i vreme zakazanog termina.
+     * 
+     * @return Datum i vreme zakazanog termina, tipa Date.
      */
     public Date getDatumVreme() {
         return datumVreme;
     }
 
     /**
-     * @param datumVreme the datumVreme to set
+     * Vraća datum i vreme zakazanog termina.
+     * 
+     * @param datumVreme Datum i vreme zakazanog termina, tipa Date.
      */
     public void setDatumVreme(Date datumVreme) {
         this.datumVreme = datumVreme;
     }
 
     /**
-     * @return the pomocniTrener
+     * Vraća pomoćnog trenera.
+     * 
+     * @return Pomoćni trener zakazanog termina, tipa PomocniTrener.
      */
     public PomocniTrener getPomocniTrener() {
         return pomocniTrener;
     }
 
     /**
-     * @param pomocniTrener the pomocniTrener to set
+     * Postavlja pomoćnog trenera zakazanog termina na novu vrednost.
+     * 
+     * @param pomocniTrener Objekat klase PomocniTrener.
      */
     public void setPomocniTrener(PomocniTrener pomocniTrener) {
         this.pomocniTrener = pomocniTrener;
     }
 
     /**
-     * @return the korisnik
+     * Vraća korisnika zakazanog termina.
+     * 
+     * @return Korisnik zakazanog termina, tipa Korisnik.
      */
     public Korisnik getKorisnik() {
         return korisnik;
     }
 
     /**
-     * @param korisnik the korisnik to set
+     * Postavlja korisnika zakazanog termina na novu vrednost.
+     * 
+     * @param korisnik Objekat klase Korisnik.
      */
     public void setKorisnik(Korisnik korisnik) {
         this.korisnik = korisnik;
     }
 
     /**
-     * @return the trening
+     * Vraća trening zakazanog termina.
+     * 
+     * @return Trening zakazanog termina, tipa Trening.
      */
     public Trening getTrening() {
         return trening;
     }
 
     /**
-     * @param trening the trening to set
+     * Postavlja trening zakazanog termina na novu vrednost.
+     * 
+     * @param trening Objekat klase Trening.
      */
     public void setTrening(Trening trening) {
         this.trening = trening;
     }
 
     /**
-     * @return the vezbeZaTermin
+     * Vraća listu vežbi zakazanog termina.
+     * 
+     * @return Vežbe zakazanog termina, tipa ArrayList.
      */
     public ArrayList<VezbaZaTermin> getVezbeZaTermin() {
         return vezbeZaTermin;
     }
 
     /**
-     * @param vezbeZaTermin the vezbeZaTermin to set
+     * Postavlja listu vežbi zakazanog termina na novu vrednost.
+     * 
+     * @param vezbeZaTermin Lista objekata vežbi za termin klase VezbaZaTermin .
      */
     public void setVezbeZaTermin(ArrayList<VezbaZaTermin> vezbeZaTermin) {
         this.vezbeZaTermin = vezbeZaTermin;

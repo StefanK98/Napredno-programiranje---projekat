@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package domain;
 
 import java.io.Serializable;
@@ -12,18 +7,43 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 /**
- *
- * @author Kujovic
+ * Klasa koja predstavlja tip korisnika.
+ * 
+ * Tip korisnika ima atribute:
+ * tipKorisnikaID tipa Long
+ * nazivTipaKorisnika tipa String
+ * opis tipa String
  */
 public class TipKorisnika extends AbstractDomainObject implements Serializable{
-    
+    /**
+     * Jedinstvena šifra tipa korisnika tipa Long.
+     */
     private Long tipKorisnikaID;
+    
+    /**
+     * Naziv tipa korisnika tipa String.
+     */
     private String nazivTipaKorisnika;
+    
+    /**
+     * Opis tipa korisnika tipa String.
+     */
     private String opis;
 
+    /**
+     * Konstruktor koji inicijalizuje objekat klase TipKorisnika.
+     */
     public TipKorisnika() {
     }
-
+    
+    /**
+     * Konstruktor koji inicijalizuje objekat i postavlja vrednost svih atributa
+     * tipa korisnika
+     * .
+     * @param tipKorisnikaID Jedinstvena šifra tipa korisnika tipa Long.
+     * @param nazivTipaKorisnika Naziv tipa korisnika tipa String.
+     * @param opis Opis tipa korisnika tipa String.
+     */
     public TipKorisnika(Long tipKorisnikaID, String nazivTipaKorisnika, String opis) {
         this.tipKorisnikaID = tipKorisnikaID;
         this.nazivTipaKorisnika = nazivTipaKorisnika;
@@ -31,42 +51,54 @@ public class TipKorisnika extends AbstractDomainObject implements Serializable{
     }
 
     /**
-     * @return the tipKorisnikaID
+     * Vraća šifru tipa korisnika.
+     * 
+     * @return Šifra tipa korisnika tipa Long.
      */
     public Long getTipKorisnikaID() {
         return tipKorisnikaID;
     }
 
     /**
-     * @param tipKorisnikaID the tipKorisnikaID to set
+     * Postavlja šifru tipa korisnika na novu vrednost.
+     * 
+     * @param tipKorisnikaID Šifra tipa korisnika tipa Long.
      */
     public void setTipKorisnikaID(Long tipKorisnikaID) {
         this.tipKorisnikaID = tipKorisnikaID;
     }
 
     /**
-     * @return the nazivTipaKorisnika
+     * Vraća naziv tipa korisnika.
+     * 
+     * @return Naziv tipa korisnika tipa String.
      */
     public String getNazivTipaKorisnika() {
         return nazivTipaKorisnika;
     }
 
     /**
-     * @param nazivTipaKorisnika the nazivTipaKorisnika to set
+     * Postavlja naziv tipa klijenta na novu vrednost.
+     * 
+     * @param nazivTipaKorisnika Naziv tipa korisnika tipa String.
      */
     public void setNazivTipaKorisnika(String nazivTipaKorisnika) {
         this.nazivTipaKorisnika = nazivTipaKorisnika;
     }
 
     /**
-     * @return the opis
+     * Vraća opis tipa korisnika.
+     * 
+     * @return Opis tipa korisnika tipa String.
      */
     public String getOpis() {
         return opis;
     }
 
     /**
-     * @param opis the opis to set
+     * Postavlja opis tipa korisnika na novu vrednost.
+     * 
+     * @param opis Opis tipa korisnika tipa String.
      */
     public void setOpis(String opis) {
         this.opis = opis;

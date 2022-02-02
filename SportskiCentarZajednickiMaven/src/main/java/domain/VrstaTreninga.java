@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package domain;
 
 import java.io.Serializable;
@@ -12,17 +7,36 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 /**
- *
- * @author Kujovic
+ * Klasa koja prestavlja vrstu treninga.
+ * 
+ * Vrsta treninga ima atribute:
+ * vrstaTreningaID tipa Long
+ * nazivVrsteTreninga tipa String
  */
 public class VrstaTreninga extends AbstractDomainObject implements Serializable {
 
+    /**
+     * Jedinstvena šifra vrste treninga, tipa Long.
+     */
     private Long vrstaTreningaID;
+    
+    /**
+     * Naziv vrste treninga, tipa String.
+     */
     private String nazivVrsteTreninga;
 
+    /**
+     * Konstruktor koji inicijalizuje objekat klase VrstaTreninga.
+     */
     public VrstaTreninga() {
     }
 
+    /**
+     * Konstruktor koji inicijalizuje objekat i postavlja vrednost svih atributa klase Trening.
+     * 
+     * @param vrstaTreningaID Šifra vrste treninga tipa Long.
+     * @param nazivVrsteTreninga Naziv vrste treninga tipa String.
+     */
     public VrstaTreninga(long vrstaTreningaID, String nazivVrsteTreninga) {
         this.vrstaTreningaID = vrstaTreningaID;
         this.nazivVrsteTreninga = nazivVrsteTreninga;
@@ -45,19 +59,38 @@ public class VrstaTreninga extends AbstractDomainObject implements Serializable 
         }
         return true;
     }
-
+    /**
+     * Vraća šifru vrste treninga.
+     * 
+     * @return Šifra vrste treninga tipa Long.
+     */
     public Long getVrstaTreningaID() {
         return vrstaTreningaID;
     }
 
+    /**
+     * Postavlja šfru vrste treninge na novu vrednost.
+     * 
+     * @param vrstaTreningaID Šifra vrste treninga tipa Long.
+     */
     public void setVrstaTreningaID(Long vrstaTreningaID) {
         this.vrstaTreningaID = vrstaTreningaID;
     }
-
+    
+    /**
+     * Vraća naziv vrste treninga.
+     * 
+     * @return Naziv vrste treninga tipa String.
+     */
     public String getNazivVrsteTreninga() {
         return nazivVrsteTreninga;
     }
-
+    
+    /**
+     * Postavlja naziv vrste treninga na novu vrednost.
+     * 
+     * @param nazivVrsteTreninga Naziv vrste treninga tipa String.
+     */
     public void setNazivVrsteTreninga(String nazivVrsteTreninga) {
         this.nazivVrsteTreninga = nazivVrsteTreninga;
     }

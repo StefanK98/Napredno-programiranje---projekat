@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package domain;
 
 import java.io.Serializable;
@@ -12,21 +7,63 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 /**
- *
- * @author Kujovic
+ * Klasa koja predstavlja jednog korisnika.
+ * 
+ * Korisnik ima atribute:
+ * korisnikID tipa Long
+ * ime tipa String
+ * prezime tipa String
+ * brojTelefona tipa String
+ * email tipa String
+ * tipKorisnika objekat klase TipKorisnika
  */
 public class Korisnik extends AbstractDomainObject implements Serializable{
-    
+    /**
+     * Jedinstvena šifra korisnika tipa Long.
+     */
     private Long korisnikID;
+    
+    /**
+     * Ime korisnika tipa String.
+     */
     private String ime;
+    
+    /**
+     * Prezime korisnika tipa String.
+     */
     private String prezime;
+    
+    /**
+     * Broj telefona korisnika tipa String.
+     */
     private String brojTelefona;
+    
+    /**
+     * Email korisnika tipa String.
+     */
     private String email;
+    
+    /**
+     * Tip korisnika kao objekat klase TipKorisnika.
+     */
     private TipKorisnika tipKorisnika;
 
+    /**
+     * Konstruktor koji inicijalizuje objekat klase Korisnik.
+     */
     public Korisnik() {
     }
 
+    /**
+     * Konstruktor koji inicijalizuje objekat i postavlja vrednost svih atributa klase Korisnik.
+     * 
+     * @param korisnikID Jedinstvena šifra korisnika tipa Long.
+     * @param ime Ime korisnika tipa String.
+     * @param prezime Prezime korisnika tipa String.
+     * @param brojTelefona Broj telefona korisnika tipa String.
+     * @param email Email korisnika tipa String.
+     * @param tipKorisnika Tip korisnika kao objekat klase TipKorisnika.
+     */
     public Korisnik(Long korisnikID, String ime, String prezime, String brojTelefona, String email, TipKorisnika tipKorisnika) {
         this.korisnikID = korisnikID;
         this.ime = ime;
@@ -37,84 +74,108 @@ public class Korisnik extends AbstractDomainObject implements Serializable{
     }
 
     /**
-     * @return the korisnikID
+     * Vraća šifru korisnika.
+     * 
+     * @return Šifra korisnika tipa Long.
      */
     public Long getKorisnikID() {
         return korisnikID;
     }
 
     /**
-     * @param korisnikID the korisnikID to set
+     * Postavlja šifru korisnika na novu vrednost.
+     * 
+     * @param korisnikID Šifra korisnika tipa Long.
      */
     public void setKorisnikID(Long korisnikID) {
         this.korisnikID = korisnikID;
     }
 
     /**
-     * @return the ime
+     * Vraća ime korisnika.
+     * 
+     * @return Ime korisnika tipa String.
      */
     public String getIme() {
         return ime;
     }
 
     /**
-     * @param ime the ime to set
+     * Postavlja ime korisnika na novu vrednost.
+     * 
+     * @param ime Ime korisnika tipa String.
      */
     public void setIme(String ime) {
         this.ime = ime;
     }
 
     /**
-     * @return the prezime
+     * Vraća prezime korisnika.
+     * 
+     * @return Prezime korisnika tipa String.
      */
     public String getPrezime() {
         return prezime;
     }
 
     /**
-     * @param prezime the prezime to set
+     * Vraća prezime korisnika.
+     * 
+     * @param prezime Prezime korisnika tipa String.
      */
     public void setPrezime(String prezime) {
         this.prezime = prezime;
     }
 
     /**
-     * @return the brojTelefona
+     * Vraća broj telefona korisnika.
+     * 
+     * @return Broj telefona korisnika tipa String.
      */
     public String getBrojTelefona() {
         return brojTelefona;
     }
 
     /**
-     * @param brojTelefona the brojTelefona to set
+     * Postavlja broj telefona korisnika na novu vrednost.
+     * 
+     * @param brojTelefona Broj telefona korisnika tipa String.
      */
     public void setBrojTelefona(String brojTelefona) {
         this.brojTelefona = brojTelefona;
     }
 
     /**
-     * @return the email
+     * Vraća email korisnika.
+     * 
+     * @return Email korisnika tipa String.
      */
     public String getEmail() {
         return email;
     }
 
     /**
-     * @param email the email to set
+     * Postavlja email korisnika na novu vrednost.
+     * 
+     * @param email Email korisnika tipa String.
      */
     public void setEmail(String email) {
         this.email = email;
     }
 
     /**
-     * @return the tipKorisnika
+     * Vraća tip korisnika.
+     * 
+     * @return Tip korisnika kao objekat klase TipKorisnika.
      */
     public TipKorisnika getTipKorisnika() {
         return tipKorisnika;
     }
 
     /**
-     * @param tipKorisnika the tipKorisnika to set
+     * Postavlja tip korisnika na novu vrednost.
+     * 
+     * @param tipKorisnika Tip korisnika kao objekat klase TipKorisnika.
      */
     public void setTipKorisnika(TipKorisnika tipKorisnika) {
         this.tipKorisnika = tipKorisnika;

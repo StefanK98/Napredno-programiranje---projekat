@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package domain;
 
 import java.io.Serializable;
@@ -11,19 +6,49 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 
 /**
- *
- * @author Kujovic
+ * Klasa koja predstavlja vezbe za termin.
+ * 
+ * VezbaZaTermin ima atribute:
+ * zakazanTermin tipa ZakazanTermin (objekat klase ZakazanTermin)
+ * redniBroj tipa int
+ * vezba tipa String
+ * broj ponavljanja tipa int
  */
 public class VezbaZaTermin extends AbstractDomainObject implements Serializable{
-    
+    /**
+     * Zakazan Termin tipa ZakazanTermin.
+     */
     private ZakazanTermin zakazanTermin;
+    
+    /**
+     * Redni broj vežbe tipa int.
+     */
     private int redniBroj;
+    
+    /**
+     * Vežba tipa String.
+     */
     private String vezba;
+    
+    /**
+     * Broj ponavljanja vežbe tipa int.
+     */
     private int brojPonavljanja;
 
+    /**
+     * Konstruktor koji inicijalizuje objekat klase VezbaZaTermin.
+     */
     public VezbaZaTermin() {
     }
 
+    /**
+     * Konstruktor koji inicijalizuje objekat i postavlja vrednost svih atributa klase VezbaZaTermin.
+     * 
+     * @param zakazanTermin Zakazan termin tipa ZakazanTermin.
+     * @param redniBroj Redni broj vežbe tipa int.
+     * @param vezba Vežba tipa int.
+     * @param brojPonavljanja Broj ponavljanja vežbe tipa int.
+     */
     public VezbaZaTermin(ZakazanTermin zakazanTermin, int redniBroj, String vezba, int brojPonavljanja) {
         this.zakazanTermin = zakazanTermin;
         this.redniBroj = redniBroj;
@@ -32,56 +57,72 @@ public class VezbaZaTermin extends AbstractDomainObject implements Serializable{
     }
 
     /**
-     * @return the zakazanTermin
+     * Vraća objekat klase ZakazanTermin.
+     * 
+     * @return Objekat klase ZakazanTermin.
      */
     public ZakazanTermin getZakazanTermin() {
         return zakazanTermin;
     }
 
     /**
-     * @param zakazanTermin the zakazanTermin to set
+     * Postavlja zakazan termin na novu vrednost.
+     * 
+     * @param zakazanTermin Objekat klase ZakazanTermin.
      */
     public void setZakazanTermin(ZakazanTermin zakazanTermin) {
         this.zakazanTermin = zakazanTermin;
     }
 
     /**
-     * @return the redniBroj
+     * Vraća redni broj vežbe.
+     * 
+     * @return Redni broj vežbe tipa int.
      */
     public int getRedniBroj() {
         return redniBroj;
     }
 
     /**
-     * @param redniBroj the redniBroj to set
+     * Postavlja redni broj na novu vrednost.
+     * 
+     * @param redniBroj Redni broj vežbe tipa int.
      */
     public void setRedniBroj(int redniBroj) {
         this.redniBroj = redniBroj;
     }
 
     /**
-     * @return the vezba
+     * Vraća vežbu.
+     * 
+     * @return Vežba tipa String.
      */
     public String getVezba() {
         return vezba;
     }
 
     /**
-     * @param vezba the vezba to set
+     * Postavlja vežbu na novu vrednost.
+     * 
+     * @param vezba Vežba tipa String.
      */
     public void setVezba(String vezba) {
         this.vezba = vezba;
     }
 
     /**
-     * @return the brojPonavljanja
+     * Vraća broj ponavljanja vežbe.
+     * 
+     * @return Broj ponavljanja vežbe tipa int.
      */
     public int getBrojPonavljanja() {
         return brojPonavljanja;
     }
 
     /**
-     * @param brojPonavljanja the brojPonavljanja to set
+     * Postavlja broj ponavljanja vežbe na novu vrednost.
+     * 
+     * @param brojPonavljanja Broj ponavljanja vežbe tipa int.
      */
     public void setBrojPonavljanja(int brojPonavljanja) {
         this.brojPonavljanja = brojPonavljanja;

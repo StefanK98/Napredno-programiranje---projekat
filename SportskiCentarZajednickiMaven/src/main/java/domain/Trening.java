@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package domain;
 
 import java.io.Serializable;
@@ -12,32 +7,102 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 /**
- *
- * @author Kujovic
+ * Klasa koja predstavlja jedan trening.
+ * 
+ * Trening ima atribute:
+ * treningID tipa Long
+ * nazivTreninga tipa String
+ * vrstaTreninga objekat klase VrstaTreninga
  */
 public class Trening extends AbstractDomainObject implements Serializable {
 
+    /**
+     * Jedinstvena šifra treninga, tipa Long.
+     */
     private Long treningID;
+    
+    /**
+     * Naziv treninga tipa String.
+     */
     private String nazivTreninga;
+    
+    /**
+     * Vrsta treninga kao objekat klase VrstaTreninga.
+     */
     private VrstaTreninga vrstaTreninga;
 
+    /**
+     * Konstruktor koji inicijalizuje objekat klase Trening.
+     */
     public Trening() {
     }
 
+    /**
+     * Konstruktor koji inicijalizuje objekat i postavlja vrednost svih atributa klase Trening.
+     * 
+     * @param treningID Šifra treninga tipa Long.
+     * @param nazivTreninga Naziv treninga tipa String.
+     * @param vrstaTreninga Vrsta treninga kao objekat klase VrstaTreninga.
+     */
     public Trening(Long treningID, String nazivTreninga, VrstaTreninga vrstaTreninga) {
         this.treningID = treningID;
         this.nazivTreninga = nazivTreninga;
         this.vrstaTreninga = vrstaTreninga;
     }
-
+    /**
+     * Vraća šifru treninga.
+     * 
+     * @return Šifra treninga tipa Long.
+     */
+    public Long getTreningID() {
+        return treningID;
+    }
+    
+    /**
+     * Postavlja vrstu treninga na novu vrednost.
+     * 
+     * @param treningID Šifra treninga tipa Long.
+     */
+    public void setTreningID(Long treningID) {
+        this.treningID = treningID;
+    }
+    
+    /**
+     * Vraća naziv treninga.
+     * 
+     * @return Naziv treninga tipa String.
+     */
+    public String getNazivTreninga() {
+        return nazivTreninga;
+    }
+    
+    /**
+     * Postavlja naziv treninga na novu vrednost.
+     * 
+     * @param nazivTreninga Naziv treninga tipa String.
+     */
+    public void setNazivTreninga(String nazivTreninga) {
+        this.nazivTreninga = nazivTreninga;
+    }
+    
+    /**
+     * Vraća vrstu treninga.
+     * 
+     * @return Vrsta treninga kao objekat klase VrstaTreninga.
+     */
     public VrstaTreninga getVrstaTreninga() {
         return vrstaTreninga;
     }
 
+    /**
+     * Postavlja vrstu treninga na novu vrednost.
+     * 
+     * @param vrstaTreninga Vrsta treninga kao objekat klase VrstaTreninga.
+     */
     public void setVrstaTreninga(VrstaTreninga vrstaTreninga) {
         this.vrstaTreninga = vrstaTreninga;
     }
-
+    
     @Override
     public boolean equals(Object obj) {
         if (this == obj) {
@@ -59,22 +124,8 @@ public class Trening extends AbstractDomainObject implements Serializable {
         return true;
     }
 
-    public Long getTreningID() {
-        return treningID;
-    }
-
-    public void setTreningID(Long treningID) {
-        this.treningID = treningID;
-    }
-
-    public String getNazivTreninga() {
-        return nazivTreninga;
-    }
-
-    public void setNazivTreninga(String nazivTreninga) {
-        this.nazivTreninga = nazivTreninga;
-    }
     
+
     @Override
     public String toString() {
         return nazivTreninga;

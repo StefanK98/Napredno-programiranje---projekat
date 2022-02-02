@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package domain;
 
 import java.io.Serializable;
@@ -12,20 +7,57 @@ import java.util.ArrayList;
 import java.util.Objects;
 
 /**
- *
- * @author Kujovic
+ * Klasa koja predstavlja jednog pomoćnog trenera.
+ * 
+ * Pomoćni trener ima atribute:
+ * pomocniTrenerID tipa Long
+ * ime tipa String
+ * prezime tipa String
+ * korisnickoIme tipa String
+ * lozinka tipa String
+ * 
  */
 public class PomocniTrener extends AbstractDomainObject implements Serializable{
-    
+    /**
+     * Jedinstvena šifra pomoćnog trenera tipa Long.
+     */
     private Long pomocniTrenerID;
+    
+    /**
+     * Ime pomoćnog trenera tipa String.
+     */
     private String ime;
+    
+    /**
+     * Prezime pomoćnog trenera tipa String.
+     */
     private String prezime;
+    
+    /**
+     * Korisničko ime pomoćnog trenera tipa String.
+     */
     private String korisnickoIme;
+    
+    /**
+     * Lozinka pomoćnog trenera tipa String.
+     */
     private String lozinka;
 
+    /**
+     * Konstruktor koji inicijalizuje objekat klase PomoćniTrener.
+     */
     public PomocniTrener() {
     }
 
+    /**
+     * Konstruktor koji inicijalizuje objekat i postavlja vrednost svih atributa klase PomoćniTrener.
+     * 
+     * @param pomocniTrenerID Jedinstvena šifra pomoćnog trenera tipa Long.
+     * @param ime Ime pomoćnog trenera tipa String.
+     * @param prezime Prezime pomoćnog trenera tipa String.
+     * @param korisnickoIme Korisničko ime pomoćnog trenera tipa String.
+     * @param lozinka Lozinka pomoćnog trenera tipa String.
+     */
     public PomocniTrener(Long pomocniTrenerID, String ime, String prezime, String korisnickoIme, String lozinka) {
         this.pomocniTrenerID = pomocniTrenerID;
         this.ime = ime;
@@ -34,70 +66,90 @@ public class PomocniTrener extends AbstractDomainObject implements Serializable{
         this.lozinka = lozinka;
     }
     /**
-     * @return the pomocniTrenerID
+     * Vraća šifru pomoćnog trenera.
+     * 
+     * @return Šifra pomoćnog trenera tipa Long.
      */
     public Long getPomocniTrenerID() {
         return pomocniTrenerID;
     }
 
     /**
-     * @param pomocniTrenerID the pomocniTrenerID to set
+     * Postavlja šifru pomoćnog trenera na novu vrednost.
+     * 
+     * @param pomocniTrenerID Šifra pomoćnog trenera tipa Long.
      */
     public void setPomocniTrenerID(Long pomocniTrenerID) {
         this.pomocniTrenerID = pomocniTrenerID;
     }
 
     /**
-     * @return the ime
+     * Vraća ime pomoćnog trenera.
+     * 
+     * @return Ime pomoćnog trenera tipa String.
      */
     public String getIme() {
         return ime;
     }
 
     /**
-     * @param ime the ime to set
+     * Postavlja ime pomoćnog trenera na novu vrednost.
+     * 
+     * @param ime Ime pomoćnog trenera tipa String.
      */
     public void setIme(String ime) {
         this.ime = ime;
     }
 
     /**
-     * @return the prezime
+     * Vraća prezime pomoćnog trenera.
+     * 
+     * @return Prezime pomoćnog trenera tipa String.
      */
     public String getPrezime() {
         return prezime;
     }
 
     /**
-     * @param prezime the prezime to set
+     * Postavlja prezime pomoćnog trenera na novu vrednost.
+     * 
+     * @param prezime Prezime pomoćnog trenera tipa String.
      */
     public void setPrezime(String prezime) {
         this.prezime = prezime;
     }
 
     /**
-     * @return the korisnickoIme
+     * Vraća korisničko ime pomoćnog trenera.
+     * 
+     * @return Korisničko ime pomoćnog trenera tipa String.
      */
     public String getKorisnickoIme() {
         return korisnickoIme;
     }
 
     /**
-     * @param korisnickoIme the korisnickoIme to set
+     * Postavlja korisničko ime pomoćnog trenera na novu vrednost.
+     * 
+     * @param korisnickoIme Prezime pomoćnog trenera tipa String.
      */
     public void setKorisnickoIme(String korisnickoIme) {
         this.korisnickoIme = korisnickoIme;
     }
 
     /**
-     * @return the lozinka
+     * Vraća lozinku pomoćnog trenera.
+     * 
+     * @return Lozinka pomoćnog trenera tipa String.
      */
     public String getLozinka() {
         return lozinka;
     }
 
     /**
-     * @param lozinka the lozinka to set
+     * Postavlja lozinku pomoćnog trenera na novu vrednost.
+     * 
+     * @param lozinka Lozinka pomoćnog trenera tipa String.
      */
     public void setLozinka(String lozinka) {
         this.lozinka = lozinka;

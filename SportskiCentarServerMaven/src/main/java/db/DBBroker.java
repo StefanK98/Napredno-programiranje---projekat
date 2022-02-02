@@ -14,34 +14,46 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.List;
 
+import com.google.gson.Gson;
+import java.io.FileReader;
+
 /**
  *
  * @author Kujovic
  */
 public class DBBroker {
+
     private static DBBroker instance;
     private Connection connection;
 
     public DBBroker() {
         try {
-            connection=
-                    DriverManager.getConnection("jdbc:mysql://localhost:3306/sportskicentar", "root", "");
+            FileReader file = new FileReader("parametriZaBazu.json");
+            Gson gson = new Gson();
+            DBParameters dbp = gson.fromJson(file, DBParameters.class);
+            //connection
+            //       = DriverManager.getConnection("jdbc:mysql://localhost:3306/sportskicentar", "root", "");
+
+            connection = DriverManager.getConnection(dbp.connectionString, dbp.username, dbp.password);
             connection.setAutoCommit(false);
         } catch (SQLException ex) {
             ex.printStackTrace();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
-    
+
     public Connection getConnection() {
         return connection;
     }
 
     public static DBBroker getInstance() {
-        if(instance==null)
-            instance=new DBBroker();
+        if (instance == null) {
+            instance = new DBBroker();
+        }
         return instance;
     }
-    
+
     public List<AbstractDomainObject> select(AbstractDomainObject ado) throws SQLException {
         String upit = "SELECT * FROM " + ado.nazivTabele() + " " + ado.alijas() + " " + ado.join() + " ";
         System.out.println(upit);

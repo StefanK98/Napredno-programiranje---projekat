@@ -79,7 +79,7 @@ class PomocniTrenerTest extends AbstractDomainObjectTest {
         "1, Stefan, Kujovic, kuja, kuja98, 1, Stefan, Kujovic, kuja, kuja98, true",
         "1, Stefan, Kujovic, kuja, kuja98, 1, Stefan, Kujovic, kuja, kuja, false",
         "1, Stefan, Kujovic, kuja, kuja98, 1, Milos, Kujovic, kuja, kuja98, false",})
-    void testEqualsObject(Long ptID1, String ime1, String prezime1, String korisnickoIme1,
+    void testEqualsObjects(Long ptID1, String ime1, String prezime1, String korisnickoIme1,
             String lozinka1, Long ptID2, String ime2, String prezime2, String korisnickoIme2, String lozinka2, boolean equals) {
         PomocniTrener pt1 = new PomocniTrener(ptID1, ime1, prezime1, korisnickoIme1, lozinka1);
         PomocniTrener pt2 = new PomocniTrener(ptID2, ime2, prezime2, korisnickoIme2, lozinka2);

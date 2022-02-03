@@ -8,36 +8,33 @@ import java.util.Objects;
 
 /**
  * Klasa koja predstavlja jednog pomoćnog trenera.
- * 
- * Pomoćni trener ima atribute:
- * pomocniTrenerID tipa Long
- * ime tipa String
- * prezime tipa String
- * korisnickoIme tipa String
- * lozinka tipa String
- * 
+ *
+ * Pomoćni trener ima atribute: pomocniTrenerID tipa Long ime tipa String
+ * prezime tipa String korisnickoIme tipa String lozinka tipa String
+ *
  */
-public class PomocniTrener extends AbstractDomainObject implements Serializable{
+public class PomocniTrener extends AbstractDomainObject implements Serializable {
+
     /**
      * Jedinstvena šifra pomoćnog trenera tipa Long.
      */
     private Long pomocniTrenerID;
-    
+
     /**
      * Ime pomoćnog trenera tipa String.
      */
     private String ime;
-    
+
     /**
      * Prezime pomoćnog trenera tipa String.
      */
     private String prezime;
-    
+
     /**
      * Korisničko ime pomoćnog trenera tipa String.
      */
     private String korisnickoIme;
-    
+
     /**
      * Lozinka pomoćnog trenera tipa String.
      */
@@ -50,8 +47,9 @@ public class PomocniTrener extends AbstractDomainObject implements Serializable{
     }
 
     /**
-     * Konstruktor koji inicijalizuje objekat i postavlja vrednost svih atributa klase PomoćniTrener.
-     * 
+     * Konstruktor koji inicijalizuje objekat i postavlja vrednost svih atributa
+     * klase PomoćniTrener.
+     *
      * @param pomocniTrenerID Jedinstvena šifra pomoćnog trenera tipa Long.
      * @param ime Ime pomoćnog trenera tipa String.
      * @param prezime Prezime pomoćnog trenera tipa String.
@@ -65,9 +63,10 @@ public class PomocniTrener extends AbstractDomainObject implements Serializable{
         this.korisnickoIme = korisnickoIme;
         this.lozinka = lozinka;
     }
+
     /**
      * Vraća šifru pomoćnog trenera.
-     * 
+     *
      * @return Šifra pomoćnog trenera tipa Long.
      */
     public Long getPomocniTrenerID() {
@@ -76,7 +75,7 @@ public class PomocniTrener extends AbstractDomainObject implements Serializable{
 
     /**
      * Postavlja šifru pomoćnog trenera na novu vrednost.
-     * 
+     *
      * @param pomocniTrenerID Šifra pomoćnog trenera tipa Long.
      */
     public void setPomocniTrenerID(Long pomocniTrenerID) {
@@ -85,7 +84,7 @@ public class PomocniTrener extends AbstractDomainObject implements Serializable{
 
     /**
      * Vraća ime pomoćnog trenera.
-     * 
+     *
      * @return Ime pomoćnog trenera tipa String.
      */
     public String getIme() {
@@ -94,7 +93,7 @@ public class PomocniTrener extends AbstractDomainObject implements Serializable{
 
     /**
      * Postavlja ime pomoćnog trenera na novu vrednost.
-     * 
+     *
      * @param ime Ime pomoćnog trenera tipa String.
      */
     public void setIme(String ime) {
@@ -103,7 +102,7 @@ public class PomocniTrener extends AbstractDomainObject implements Serializable{
 
     /**
      * Vraća prezime pomoćnog trenera.
-     * 
+     *
      * @return Prezime pomoćnog trenera tipa String.
      */
     public String getPrezime() {
@@ -112,7 +111,7 @@ public class PomocniTrener extends AbstractDomainObject implements Serializable{
 
     /**
      * Postavlja prezime pomoćnog trenera na novu vrednost.
-     * 
+     *
      * @param prezime Prezime pomoćnog trenera tipa String.
      */
     public void setPrezime(String prezime) {
@@ -121,7 +120,7 @@ public class PomocniTrener extends AbstractDomainObject implements Serializable{
 
     /**
      * Vraća korisničko ime pomoćnog trenera.
-     * 
+     *
      * @return Korisničko ime pomoćnog trenera tipa String.
      */
     public String getKorisnickoIme() {
@@ -130,7 +129,7 @@ public class PomocniTrener extends AbstractDomainObject implements Serializable{
 
     /**
      * Postavlja korisničko ime pomoćnog trenera na novu vrednost.
-     * 
+     *
      * @param korisnickoIme Prezime pomoćnog trenera tipa String.
      */
     public void setKorisnickoIme(String korisnickoIme) {
@@ -139,7 +138,7 @@ public class PomocniTrener extends AbstractDomainObject implements Serializable{
 
     /**
      * Vraća lozinku pomoćnog trenera.
-     * 
+     *
      * @return Lozinka pomoćnog trenera tipa String.
      */
     public String getLozinka() {
@@ -148,7 +147,7 @@ public class PomocniTrener extends AbstractDomainObject implements Serializable{
 
     /**
      * Postavlja lozinku pomoćnog trenera na novu vrednost.
-     * 
+     *
      * @param lozinka Lozinka pomoćnog trenera tipa String.
      */
     public void setLozinka(String lozinka) {
@@ -167,6 +166,9 @@ public class PomocniTrener extends AbstractDomainObject implements Serializable{
             return false;
         }
         final PomocniTrener other = (PomocniTrener) obj;
+        if (!Objects.equals(this.pomocniTrenerID, other.pomocniTrenerID)) {
+            return false;
+        }
         if (!Objects.equals(this.ime, other.ime)) {
             return false;
         }
@@ -186,8 +188,7 @@ public class PomocniTrener extends AbstractDomainObject implements Serializable{
     public String toString() {
         return ime + " " + prezime;
     }
-    
-    
+
     @Override
     public String nazivTabele() {
         return " pomocnitrener ";
@@ -206,15 +207,15 @@ public class PomocniTrener extends AbstractDomainObject implements Serializable{
     @Override
     public ArrayList<AbstractDomainObject> vratiListu(ResultSet rs) throws SQLException {
         ArrayList<AbstractDomainObject> lista = new ArrayList<>();
-        
-        while(rs.next()){
+
+        while (rs.next()) {
             PomocniTrener pt = new PomocniTrener(rs.getLong("PomocniTrenerID"),
-                    rs.getString("Ime"), rs.getString("Prezime"), 
+                    rs.getString("Ime"), rs.getString("Prezime"),
                     rs.getString("KorisnickoIme"), rs.getString("Lozinka"));
-            
+
             lista.add(pt);
         }
-        
+
         rs.close();
         return lista;
     }
@@ -231,13 +232,13 @@ public class PomocniTrener extends AbstractDomainObject implements Serializable{
 
     @Override
     public String vrednostiZaInsert() {
-        return "'" + ime + "', '" + prezime + "', " 
+        return "'" + ime + "', '" + prezime + "', "
                 + "'" + korisnickoIme + "', '" + lozinka + "'";
     }
 
     @Override
     public String vrednostiZaUpdate() {
-        return " Ime = '" + ime + "', Prezime = '" + prezime + "', " 
+        return " Ime = '" + ime + "', Prezime = '" + prezime + "', "
                 + "KorisnickoIme = '" + korisnickoIme + "', Lozinka = '" + lozinka + "' ";
     }
 

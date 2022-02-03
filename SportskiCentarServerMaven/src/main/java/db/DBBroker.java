@@ -28,14 +28,20 @@ public class DBBroker {
 
     public DBBroker() {
         try {
+            Class.forName("com.mysql.cj.jdbc.Driver");
+String currentDir = System.getProperty("user.dir");
+ System.out.println("Current dir using System:" + currentDir);
             FileReader file = new FileReader("parametriZaBazu.json");
             Gson gson = new Gson();
             DBParameters dbp = gson.fromJson(file, DBParameters.class);
-            //connection
-            //       = DriverManager.getConnection("jdbc:mysql://localhost:3306/sportskicentar", "root", "");
-
-            connection = DriverManager.getConnection(dbp.connectionString, dbp.username, dbp.password);
+            connection
+                    = DriverManager.getConnection(dbp.connectionString, dbp.username, dbp.password);
             connection.setAutoCommit(false);
+/*
+            connection
+                    = DriverManager.getConnection("jdbc:mysql://localhost:3306/sportskicentar", "root", "");
+            connection.setAutoCommit(false);
+*/
         } catch (SQLException ex) {
             ex.printStackTrace();
         } catch (Exception e) {

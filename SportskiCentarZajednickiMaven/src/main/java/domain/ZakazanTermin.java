@@ -252,7 +252,7 @@ public class ZakazanTermin extends AbstractDomainObject implements Serializable{
     
     @Override
     public String koloneZaInsert() {
-        return " (DatumVreme, PomocniTrenerID, KorisnikID, TreningID) ";
+        return " (ZakazanTerminID,DatumVreme, PomocniTrenerID, KorisnikID, TreningID) ";
     }
 
     @Override
@@ -262,7 +262,7 @@ public class ZakazanTermin extends AbstractDomainObject implements Serializable{
 
     @Override
     public String vrednostiZaInsert() {
-        return "'" + new Timestamp(datumVreme.getTime()) + "', " + pomocniTrener.getPomocniTrenerID()+ ", "
+        return  zakazanTerminID + ", "+"'" + new Timestamp(datumVreme.getTime()) + "', " + pomocniTrener.getPomocniTrenerID()+ ", "
                 + "" + korisnik.getKorisnikID()+ ", " + trening.getTreningID() + " ";
     }
 

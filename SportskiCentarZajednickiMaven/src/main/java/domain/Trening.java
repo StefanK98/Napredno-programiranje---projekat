@@ -167,7 +167,7 @@ public class Trening extends AbstractDomainObject implements Serializable {
 
     @Override
     public String koloneZaInsert() {
-        return " (NazivTreninga, VrstaTreningaID) ";
+        return " (TreningID,NazivTreninga, VrstaTreningaID) ";
     }
 
     @Override
@@ -177,7 +177,7 @@ public class Trening extends AbstractDomainObject implements Serializable {
 
     @Override
     public String vrednostiZaInsert() {
-        return "'" + nazivTreninga + "', " + vrstaTreninga.getVrstaTreningaID();
+        return  treningID + ","+"'" + nazivTreninga + "', " + vrstaTreninga.getVrstaTreningaID();
     } 
 
     @Override

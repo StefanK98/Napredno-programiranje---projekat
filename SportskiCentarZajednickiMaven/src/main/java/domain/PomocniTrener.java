@@ -222,7 +222,7 @@ public class PomocniTrener extends AbstractDomainObject implements Serializable 
 
     @Override
     public String koloneZaInsert() {
-        return " (Ime, Prezime, KorisnickoIme, Lozinka) ";
+        return " (PomocniTrenerID,Ime, Prezime, KorisnickoIme, Lozinka) ";
     }
 
     @Override
@@ -232,7 +232,7 @@ public class PomocniTrener extends AbstractDomainObject implements Serializable 
 
     @Override
     public String vrednostiZaInsert() {
-        return "'" + ime + "', '" + prezime + "', "
+        return  pomocniTrenerID + ", "+"'" + ime + "', '" + prezime + "', "
                 + "'" + korisnickoIme + "', '" + lozinka + "'";
     }
 

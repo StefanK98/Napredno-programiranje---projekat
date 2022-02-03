@@ -9,6 +9,7 @@ import domain.VrstaTreninga;
 import domain.ZakazanTermin;
 import java.util.Date;
 import static junit.framework.TestCase.*;
+
 import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
@@ -26,13 +27,14 @@ class ServerControllerTest {
 	private static ZakazanTermin zt1;
 		
 	@BeforeAll
-	static void setUpBeforeClass() throws Exception {
+	static void setUpBeforeAll() throws Exception {
 		tk1 = new TipKorisnika(1L, "takmicar", "individualno");
 		tk2 = new TipKorisnika(2L, "takmicar", "grupno");
 		vt1 = new VrstaTreninga(1L, "individualni");
 		vt2 = new VrstaTreninga(2L, "grupni");		
 		
 		pt1 = new PomocniTrener(1L, "Stefan", "Kujovic", "kuja", "kuja98");
+
 		ServerController.getInstance().addPomocniTrener(pt1);		
 		
 		pt2 = new PomocniTrener(2L, "Milos", "Kujovic", "milos", "milos123");
@@ -51,21 +53,23 @@ class ServerControllerTest {
 		ServerController.getInstance().addTrening(t2);
 		
 		zt1 = new ZakazanTermin(1L, new Date(), pt1, k1, t1, null);
+            System.out.println(zt1.getZakazanTerminID());
 		ServerController.getInstance().addZakazanTermin(zt1);		
 		
 	}
 
 	@AfterAll
-	static void tearDownAfterClass() throws Exception {
+	static void tearDownAfterAll() throws Exception {
+                ServerController.getInstance().deleteZakazanTermin(zt1);	
 		ServerController.getInstance().deletePomocniTrener(pt1);
 		ServerController.getInstance().deleteKorisnik(k1);
 		ServerController.getInstance().deleteTrening(t1);
-		ServerController.getInstance().deleteZakazanTermin(zt1);		
+			
 	}
 
 	@Test
 	void testAddPomocniTrener() throws Exception {		
-		PomocniTrener pt3 = new PomocniTrener(3L, "Milos", "Lukovic", "marko1", "marko1!");
+		PomocniTrener pt3 = new PomocniTrener(3L, "Milos", "Lukovic", "milos", "milos1!");
 		ServerController.getInstance().addPomocniTrener(pt3);
 		assertFalse(DBBroker.getInstance().select(pt3).isEmpty());
 		ServerController.getInstance().deletePomocniTrener(pt3);
@@ -90,7 +94,7 @@ class ServerControllerTest {
 	@Test
 	void testAddZakazanTermin() throws Exception {
 	    Date date = new Date();
-		ZakazanTermin zt = new  ZakazanTermin(2L, date, pt1, k1, t1, null);
+		ZakazanTermin zt = new  ZakazanTermin(3L, date, pt1, k1, t1, null);
 		ServerController.getInstance().addZakazanTermin(zt);
 		assertFalse(DBBroker.getInstance().select(zt).isEmpty());
 		ServerController.getInstance().deleteZakazanTermin(zt);
@@ -132,10 +136,10 @@ class ServerControllerTest {
 	@Test
 	void testEditKorisnik() throws Exception {
 		Korisnik k = ServerController.getInstance().getAllKorisnik().get(0);
-		k.setIme("Anja");
+		k.setIme("Marko");
 		ServerController.getInstance().editKorisnik(k);
 		Korisnik kNakonIzmene = ServerController.getInstance().getAllKorisnik().get(0);
-		assertEquals("Anja", kNakonIzmene.getIme());	
+		assertEquals("Marko", kNakonIzmene.getIme());	
 	}
 
 	@Test

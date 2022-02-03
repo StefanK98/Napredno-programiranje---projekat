@@ -31,19 +31,19 @@ public class SOAddZakazanTermin extends AbstractSO{
     protected void execute(AbstractDomainObject ado) throws SQLException {
         ZakazanTermin zt = (ZakazanTermin) ado;
         PreparedStatement ps = DBBroker.getInstance().insert(ado);
-        
+        /*
         ResultSet rs = ps.getGeneratedKeys();
         
         rs.next();
-        
+        /*
         long id = rs.getLong(1);
         
         zt.setZakazanTerminID(id);
-        
+        /*
         for (VezbaZaTermin vezbaZaTermin : zt.getVezbeZaTermin()) {
             vezbaZaTermin.setZakazanTermin(zt);
             DBBroker.getInstance().insert(vezbaZaTermin);
         }
-        
+        */
     }
 }

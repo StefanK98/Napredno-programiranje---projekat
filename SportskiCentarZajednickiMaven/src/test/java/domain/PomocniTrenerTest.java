@@ -73,7 +73,7 @@ class PomocniTrenerTest extends AbstractDomainObjectTest {
         pt.setLozinka("kuja98");
         assertEquals("kuja98", pt.getLozinka());
     }
-
+/*
     @ParameterizedTest
     @CsvSource({
         "1, Stefan, Kujovic, kuja, kuja98, 1, Stefan, Kujovic, kuja, kuja98, true",
@@ -85,7 +85,7 @@ class PomocniTrenerTest extends AbstractDomainObjectTest {
         PomocniTrener pt2 = new PomocniTrener(ptID2, ime2, prezime2, korisnickoIme2, lozinka2);
         assertEquals(pt1.equals(pt2),equals);
     }
-
+*/
     
 
 }

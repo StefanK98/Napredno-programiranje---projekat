@@ -254,7 +254,7 @@ public class Korisnik extends AbstractDomainObject implements Serializable{
 
     @Override
     public String koloneZaInsert() {
-        return " (Ime, Prezime, BrojTelefona, Email, TipKorisnikaID) ";
+        return " (KorisnikID ,Ime, Prezime, BrojTelefona, Email, TipKorisnikaID) ";
     }
 
     @Override
@@ -264,7 +264,7 @@ public class Korisnik extends AbstractDomainObject implements Serializable{
 
     @Override
     public String vrednostiZaInsert() {
-        return "'" + ime + "', '" + prezime + "', "
+        return  korisnikID + ", "+"'" + ime + "', '" + prezime + "', "
                 + "'" + brojTelefona + "', '" + email + "', " + tipKorisnika.getTipKorisnikaID();
     }
 
